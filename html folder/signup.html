@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<title>Sign Up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+ .navbar{
+    background-color: rgb(1, 1, 34) !important;
+   text-size-adjust: 20px;
+   -ms-text-size-adjust: auto;
+   
+  }
+  .navbar a{
+    color: rgb(255, 255, 255) !important;
+    padding-left: 30px !important;
+
+    padding: 20px;
+  }
+  .imgnav{
+    padding-right: 20px;
+  }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(155, 149, 149) !important;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(255, 253, 253);
+   
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #004faa;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <img src="./New_Logo_DU_1-1.png" height="70" width="150"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  PROGRAMMES
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:rgb(1, 1, 34) ">
+                  <li><a class="dropdown-item" href="#COMPUTER SCIENCE"> COMPUTER SCIENCE </a></li>
+                  <li><a class="dropdown-item" href="#SOFTWARE ENGINEERING"> SOFTWARE ENGINEERING</a></li>
+                  <li><a class="dropdown-item" href="#CYBER SECURITY"> CYBER SECURITY</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#CONTACT">CONTACT </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./signup.html">SIGN UP </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./loginindex.html">LOG IN </a>
+              </li>
+              
+              
+            </ul>
+            
+          </div>
+          
+        </div>
+       
+      
+      </nav>
+      <br>
+      <br>
+      
+<div class="container">
+    <form id="signup-form" class="signup-form" onsubmit="validateForm(event)">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit"> <a href="./loginindex.html"></a> sign-up </button>
+       <p><h6>Already have an account</h6><a href="./loginindex.html"> Log in</a></p> 
+        <p id="error-message" class="error-message"></p>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+function validateForm(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Retrieve form inputs
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // Validation logic (you can add more validation as needed)
+    if (username.trim() === "" || email.trim() === "" || password.trim() === "") {
+        document.getElementById("error-message").innerText = "All fields are required.";
+        return;
+    }
+
+    // If all fields are filled, display success message
+    document.getElementById("error-message").innerText = "Sign up successful!"; // You can replace this with actual sign-up logic
+}
+</script>
+
+</body>
+</html>

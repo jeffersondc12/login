@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(155, 149, 149) !important;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(255, 253, 253);
+   
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #004faa;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+</style>
+<body>
+<div class="container">
+    <form id="signup-form" class="signup-form" onsubmit="validateForm(event)">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+        <p id="error-message" class="error-message"></p>
+    </form>
+</div>
+
+<script>
+function validateForm(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Retrieve form inputs
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // Validation logic (you can add more validation as needed)
+    if (username.trim() === "" || email.trim() === "" || password.trim() === "") {
+        document.getElementById("error-message").innerText = "All fields are required.";
+        return;
+    }
+
+    // If all fields are filled, display success message
+    document.getElementById("error-message").innerText = "Sign up successful!"; // You can replace this with actual sign-up logic
+}
+</script>
+</body>
+</html>
